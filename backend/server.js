@@ -1,9 +1,10 @@
+const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 const allowedOrigins = [
-    "https://my-react-router-app.vercel.app",
+    "https://wmt-lab-test-practice-6l32.vercel.app",
     "http://localhost:5173",
 ];
 
@@ -20,3 +21,9 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.use(express.json());
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
