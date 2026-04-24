@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
     res.send("API is running");
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 // 🔥 CONNECT FIRST, THEN START SERVER
 mongoose.connect(process.env.MONGO_URI)
